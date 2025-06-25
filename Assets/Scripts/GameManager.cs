@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Text turnMessage;
 
-    const string RED_MESSAGE = "Red's Turn";
-    const string GREEN_MESSAGE = "Greens's Turn";
+    const string RED_MESSAGE = "Vez do Vermelho";
+    const string GREEN_MESSAGE = "Vez do Verde";
 
     Color RED_COLOR = new Color(231, 29, 54, 255) / 255;
     Color GREEN_COLOR = new Color(0, 222, 1, 255) / 255;
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
                 myBoard.UpdateBoard(hit.collider.gameObject.GetComponent<Column>().col - 1, isPlayer);
                 if(myBoard.Result(isPlayer))
                 {
-                    turnMessage.text = (isPlayer ? "Red" : "Green") + " Wins!";
+                    turnMessage.text = (isPlayer ? "Vermelho" : "Verde") + " ganhou!";
                     hasGameFinished = true;
                     return;
                 }
